@@ -1,9 +1,10 @@
-
+import '../index.css'
 function NaveBar() {
   return (
-    <div>
-      
-    </div>
+    <nav className='bg-gray-600 shadow p-4'>
+        <h1 className="text-red-500 font-bold ">Job Tracker</h1>
+        
+    </nav>
   )
 }
 
