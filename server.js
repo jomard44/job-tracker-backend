@@ -2,11 +2,11 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import mongoose from "mongoose";
-import router from "./routes/index.js";
+import jobRoutes from "./routes/jobRoutes.js";
 
 const app = express();
-
-app.use("/api", router);
+app.use(express.json())
+app.use("/api", jobRoutes);
 
 mongoose.connect(process.env.MONGO).then(
   app.listen(process.env.PORT, () => {
