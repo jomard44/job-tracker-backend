@@ -1,0 +1,25 @@
+{
+  "name": "job-tracker-backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jomard44/job-tracker-backend#readme",
+  "bugs": {
+    "url": "https://github.com/jomard44/job-tracker-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jomard44/job-tracker-backend.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.4"
+  }
+}
