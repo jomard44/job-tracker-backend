@@ -1,12 +1,28 @@
-
-function JobCard({company_name,position,status}) {
+function JobCard({ company_name, position, status }) {
   return (
-    <div className="bg-blue-300/30 m-3 border border-gray-800 rounded p-3 text-lg ">
-      <input className="" type="text" value={company_name} readOnly />
-      <input type="text" value={position} readOnly />
-      <input type="text" value={status} readOnly />
+    <div className="bg-white/60 border border-gray-300 rounded-lg p-4 shadow-md m-3 flex items-center gap-4">
+      <input
+        className="flex-1 p-2 border rounded-md bg-gray-50 text-gray-700 font-medium"
+        type="text"
+        value={company_name}
+        readOnly
+      />
+
+      <input
+        className="flex-1 p-2 border rounded-md bg-gray-50 text-gray-700"
+        type="text"
+        value={position}
+        readOnly
+      />
+
+      <input
+        className="flex-1 p-2 border rounded-md bg-gray-50 text-gray-700"
+        type="text"
+        value={status}
+        readOnly
+      />
     </div>
-  )
+  );
 }
 
-export default JobCard
+export default JobCard;
