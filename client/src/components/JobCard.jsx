@@ -1,4 +1,5 @@
-function JobCard({ company_name, position, status }) {
+import {Link} from "react-router-dom"
+function JobCard({id, company_name, position, status }) {
   return (
     <div className="bg-white/60 border border-gray-300 rounded-lg p-4 shadow-md m-3 flex items-center gap-4">
       <input
@@ -21,6 +22,7 @@ function JobCard({ company_name, position, status }) {
         value={status}
         readOnly
       />
+    <Link className="p-4" to={`/edit/${id}`}>edit</Link>
     </div>
   );
 }
