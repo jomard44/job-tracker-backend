@@ -30,7 +30,7 @@ const Delete = () => {
       className="bg-white/60 border border-gray-300 rounded-lg w-[50%] mx-auto mt-10 p-6 shadow-md space-y-5"
     >
       <h2 className="text-2xl font-semibold text-gray-700 text-center">
-        Edit job details
+        Delete job
       </h2>
 
       <label className="flex flex-col text-gray-700 font-medium">

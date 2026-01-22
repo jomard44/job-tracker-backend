@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AddJob() {
+  const navigate = useNavigate();
   const [job, setJob] = useState({
     company_name: "",
     position: "",
@@ -21,6 +23,7 @@ function AddJob() {
       body: JSON.stringify(job),
     });
     setJob({ company_name: "", position: "", status: "Applied" });
+    navigate("/")
   };
 
   return (
