@@ -23,6 +23,7 @@ function JobCard({id, company_name, position, status }) {
         readOnly
       />
     <Link className="p-4" to={`/edit/${id}`}>edit</Link>
+     <Link className="p-4" to={`/delete/${id}`}>delete</Link>
     </div>
   );
 }

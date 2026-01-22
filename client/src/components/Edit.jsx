@@ -81,7 +81,7 @@ function Edit() {
       </label>
 
       <button className="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition">
-        Submit
+        Save changes
       </button>
     </form>
   );
