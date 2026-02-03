@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import {useAuth} from "../../utils/AuthContext"
 
 function Signin() {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+const {setIsAuth} = useAuth()
   const [signed, setSigned] = useState(true);
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -24,6 +26,7 @@ function Signin() {
 
     if (signin.ok) {
       navigate("/");
+      setIsAuth(true)
     } else {
       setSigned(false);
     }
@@ -67,9 +70,17 @@ function Signin() {
         />
       </div>
 
-      <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
-        Submit
+      <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 hover:cursor-pointer transition ">
+        Signin
       </button>
+      <div className="flex flex-col justify-center items-center">
+        <p>don't have an account </p>
+
+        <Link to="/register" className="text-blue-500 hover:cursor-pointer">
+          
+          signup
+        </Link>
+      </div>
     </form>
   );
 }

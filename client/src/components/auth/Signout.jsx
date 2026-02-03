@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-
+import { useAuth } from "../../utils/AuthContext";
 function Signout() {
   const navigate = useNavigate();
-
+  const {setIsAuth} = useAuth()
   const handleLogout = async () => {
     try {
       const res = await fetch("http://localhost:3000/user/logout", {
@@ -15,6 +15,7 @@ function Signout() {
       } else {
         alert("Logout failed");
       }
+      setIsAuth(false)
     } catch (err) {
       console.error(err);
     }
