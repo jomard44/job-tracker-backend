@@ -17,6 +17,7 @@ function AddJob() {
     e.preventDefault();
     await fetch("http://localhost:3000/api/jobs", {
       method: "POST",
+      credentials:"include",
       headers: {
         "Content-Type": "application/json",
       },

@@ -12,7 +12,7 @@ function Edit() {
   });
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`http://localhost:3000/api/jobs/${id}`);
+      const res = await fetch(`http://localhost:3000/api/jobs/${id}`,{credentials:"include"});
       const data = await res.json();
       setJob(data);
     };

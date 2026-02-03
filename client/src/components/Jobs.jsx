@@ -6,7 +6,7 @@ function Jobs() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/jobs");
+        const res = await fetch("http://localhost:3000/api/jobs",{credentials:"include"});
         const fetchedJobs = await res.json();
         if (!fetchedJobs) {
           console.log("there are no jobs ");
