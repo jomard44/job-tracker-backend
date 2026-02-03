@@ -15,7 +15,7 @@ function AddJob() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   await fetch("http://localhost:3000/api/jobs", {
+    await fetch("http://localhost:3000/api/jobs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ function AddJob() {
       body: JSON.stringify(job),
     });
     setJob({ company_name: "", position: "", status: "Applied" });
-    navigate("/")
+    navigate("/");
   };
 
   return (
