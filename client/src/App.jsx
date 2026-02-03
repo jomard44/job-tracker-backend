@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Edit from "./components/Edit";
 import Delete from "./components/Delete";
 import Register from "./components/auth/Register";
+import Signin from "./components/auth/Signin";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
+          <Route path="/login" element={<Signin />} />
+
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<Jobs />} />
           <Route path="/add-job" element={<AddJob />} />
