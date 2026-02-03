@@ -6,24 +6,30 @@ function Register() {
     email: "",
     password: "",
   });
+  const [registerd, setRegisterd] = useState(true);
   const navigate = useNavigate();
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("http://localhst:3000/user/register", {
+    const register = await fetch("http://localhost:3000/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
+
+    if (register.ok) {
+      navigate("/");
+    } else {
+      setRegisterd(false);
+    }
     setUser({
       email: "",
       password: "",
     });
-    navigate("/");
   };
 
   return (
@@ -32,6 +38,11 @@ function Register() {
       className="max-w-md mx-auto mt-20 p-6 bg-white rounded-xl shadow-lg space-y-4"
     >
       <h2 className="text-2xl font-semibold text-center">Register</h2>
+      {!registerd && (
+        <p className="text-red-500">
+          something went wrong. please try again
+        </p>
+      )}
 
       <div className="flex flex-col">
         <label className="text-sm font-medium mb-1">Email</label>
