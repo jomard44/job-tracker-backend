@@ -15,6 +15,7 @@ function Register() {
     e.preventDefault();
     const register = await fetch("http://localhost:3000/user/register", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,9 +40,7 @@ function Register() {
     >
       <h2 className="text-2xl font-semibold text-center">Register</h2>
       {!registerd && (
-        <p className="text-red-500">
-          something went wrong. please try again
-        </p>
+        <p className="text-red-500">something went wrong. please try again</p>
       )}
 
       <div className="flex flex-col">

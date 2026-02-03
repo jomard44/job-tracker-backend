@@ -7,7 +7,7 @@ import Edit from "./components/Edit";
 import Delete from "./components/Delete";
 import Register from "./components/auth/Register";
 import Signin from "./components/auth/Signin";
-
+import ProtectedRoutes from "./utils/protectedRoutes";
 function App() {
   return (
     <>
@@ -17,10 +17,12 @@ function App() {
           <Route path="/login" element={<Signin />} />
 
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Jobs />} />
-          <Route path="/add-job" element={<AddJob />} />
-          <Route path="/delete/:id" element={<Delete />} />
-          <Route path="/edit/:id" element={<Edit />} />
+          <Route element={<ProtectedRoutes/>}>
+            <Route path="/" element={<Jobs />} />
+            <Route path="/add-job" element={<AddJob />} />
+            <Route path="/delete/:id" element={<Delete />} />
+            <Route path="/edit/:id" element={<Edit />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

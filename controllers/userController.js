@@ -27,8 +27,18 @@ export const register = async (req, res) => {
       { expiresIn: "24h" },
     );
 
+    // res.status(201).json({
+    //   token,
+    //   user: { id: user._id, email: user.email },
+    // });
+    res.cookie("token", token, {
+      httpOnly: true,
+      sameSite: "strict",
+      secure: false,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+
     res.status(201).json({
-      token,
       user: { id: user._id, email: user.email },
     });
   } catch (err) {
@@ -56,12 +66,27 @@ export const login = async (req, res) => {
       process.env.JSON_SECRET,
       { expiresIn: "24h" },
     );
+    // res.status(200).json({
+    //   message: "welcome back",
+    //   token,
+    //   user: { id: user._id, email: user.email },
+    // });
+    res.cookie("token", token, {
+      httpOnly: true,
+      sameSite: "strict",
+      secure: false,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+
     res.status(200).json({
       message: "welcome back",
-      token,
       user: { id: user._id, email: user.email },
     });
   } catch (err) {
     res.status(500).json({ message: "failed to sign in", error: err });
   }
+};
+export const logout = (req, res) => {
+  res.clearCookie("token");
+  res.json({ message: "Logged out" });
 };

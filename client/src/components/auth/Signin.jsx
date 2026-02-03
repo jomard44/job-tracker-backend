@@ -13,15 +13,16 @@ function Signin() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const register = await fetch("http://localhost:3000/user/login", {
+    const signin = await fetch("http://localhost:3000/user/login", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
 
-    if (register.ok) {
+    if (signin.ok) {
       navigate("/");
     } else {
       setSigned(false);
@@ -39,9 +40,7 @@ function Signin() {
     >
       <h2 className="text-2xl font-semibold text-center">Sign in</h2>
       {!signed && (
-        <p className="text-red-500">
-          something went wrong. please try again
-        </p>
+        <p className="text-red-500">something went wrong. please try again</p>
       )}
 
       <div className="flex flex-col">
