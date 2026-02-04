@@ -17,7 +17,7 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api", jobRoutes);
-app.use("api/user", userRoutes);
+app.use("/api/user", userRoutes);
 
 mongoose
   .connect(process.env.MONGO)
