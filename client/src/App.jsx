@@ -1,4 +1,4 @@
-import "./app.css";
+import "./App.css";
 import NavBar from "./components/NaveBar";
 import Jobs from "./components/Jobs";
 import AddJob from "./components/AddJob";
