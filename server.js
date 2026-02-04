@@ -10,14 +10,14 @@ import cookieParser from "cookie-parser";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_API,
     credentials: true,
   }),
 );
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api", jobRoutes);
-app.use("/user", userRoutes);
+app.use("api/user", userRoutes);
 
 mongoose
   .connect(process.env.MONGO)

@@ -6,7 +6,7 @@ export function AuthProvider({ children }) {
   const [isAuth, setIsAuth] = useState(null);
   const checkAuth = async () => {
     try {
-      const res = await fetch("http://localhost:3000/user/me", {
+      const res = await fetch(`${import.meta.env.VITE_API}/user/me`, {
         credentials: "include",
       });
       if (!res.ok) throw new Error();

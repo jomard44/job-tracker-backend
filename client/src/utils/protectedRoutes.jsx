@@ -6,7 +6,7 @@ const ProtectedRoutes = () => {
   useEffect(() => {
     const checkAuth = async () => {
      try {
-        const res = await fetch("http://localhost:3000/user/me", {
+        const res = await fetch(`${import.meta.env.VITE_API}/user/me`, {
           credentials: "include",
         });
 

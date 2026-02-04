@@ -13,7 +13,7 @@ function Register() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const register = await fetch("http://localhost:3000/user/register", {
+    const register = await fetch(`${import.meta.env.VITE_API}/user/register`, {
       method: "POST",
       credentials: "include",
       headers: {

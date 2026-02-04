@@ -6,7 +6,7 @@ function Jobs() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/jobs",{credentials:"include"});
+        const res = await fetch(`${import.meta.env.VITE_API}/jobs`,{credentials:"include"});
         const fetchedJobs = await res.json();
         if (!fetchedJobs) {
           console.log("there are no jobs ");

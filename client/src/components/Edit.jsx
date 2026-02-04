@@ -12,7 +12,7 @@ function Edit() {
   });
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`http://localhost:3000/api/jobs/${id}`,{credentials:"include"});
+      const res = await fetch(`${import.meta.env.VITE_API}/jobs/${id}`,{credentials:"include"});
       const data = await res.json();
       setJob(data);
     };
@@ -25,7 +25,7 @@ function Edit() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:3000/api/jobs/${id}`, {
+    await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
