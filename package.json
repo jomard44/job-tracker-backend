@@ -16,7 +16,9 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "concurrently \"npm run dev\" \"cd client && npm run dev\""
+    "start-app": "concurrently \"npm run dev\" \"cd client && npm run dev\"",
+    "start":"node server.js",
+    "vercel-build":"cd client && npm install && npm run build"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
