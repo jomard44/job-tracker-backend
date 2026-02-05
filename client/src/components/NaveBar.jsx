@@ -12,7 +12,7 @@ function NaveBar() {
 
   return (
     <nav className="bg-gray-600 shadow p-4 flex justify-between">
-      <h1 className="text-red-500 font-bold ">Job Tracker</h1>
+      {!isAuth && (<h1 className="text-red-500 font-bold ">Job Tracker</h1>)}
       {isAuth && (
         <>
           <h1 className="text-red-500 font-bold ">
