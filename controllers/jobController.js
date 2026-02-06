@@ -48,7 +48,7 @@ export const editJob = async (req, res) => {
   try {
     const { id } = req.params;
     const currentJob = req.body;
-    const updatedJob = await Job.findByIdAndUpdate(
+    const updatedJob = await Job.findOneAndUpdate(
       {
         user: req.user.id,
       },
