@@ -14,6 +14,11 @@ const jobSchema = new mongoose.Schema({
     enum: ["Applied", "Interviewed", "Offer", "Rejected"],
     default: "Applied",
   },
+  user:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"User",
+    required:true
+  }
 });
 
 export default mongoose.model("Job", jobSchema);
