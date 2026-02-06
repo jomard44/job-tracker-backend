@@ -10,7 +10,10 @@ const Delete = () => {
   });
   useEffect(() => {
     const fetchJob = async () => {
-      const res = await fetch(`${import.meta.env.VITE_API}/jobs/${id}`,{credentials:"include"});
+      const res = await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
+        method: "DELETE",
+        credentials: "include",
+      });
       const data = await res.json();
       setJob(data);
     };
@@ -18,7 +21,7 @@ const Delete = () => {
   }, [id]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
       method: "DELETE",
     });

@@ -12,7 +12,14 @@ function Edit() {
   });
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${import.meta.env.VITE_API}/jobs/${id}`,{credentials:"include"});
+      const res = await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
+        method: "PUT",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(job),
+      });
       const data = await res.json();
       setJob(data);
     };
