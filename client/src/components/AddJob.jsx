@@ -15,6 +15,7 @@ function AddJob() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     await fetch(`${import.meta.env.VITE_API}/jobs`, {
       method: "POST",
       credentials:"include",

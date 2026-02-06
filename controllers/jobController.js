@@ -2,7 +2,7 @@ import Job from "../models/job.js";
 
 export const getJobs = async (req, res) => {
   try {
-    const jobs = await Job.find({ user: req.user.id });
+    const jobs = await Job.find({ user: req.user.userId });
     if (!jobs) {
       return res.send("no jobs found");
     }
@@ -17,7 +17,7 @@ export const getJob = async (req, res) => {
     const { id } = req.params;
     const job = await Job.findOne({
       _id: id,
-      user: req.user.id,
+      user: req.user.userId,
     });
     if (!job) {
       return res.send("no job found");
@@ -33,7 +33,7 @@ export const createJobs = async (req, res) => {
     const job = req.body;
     const newJob = await Job.create({
       ...job,
-      user: req.user.id,
+      user: req.user.userId,
     });
 
     res.status(201).json({ message: "a new job has been added", job: newJob });
@@ -50,7 +50,7 @@ export const editJob = async (req, res) => {
     const currentJob = req.body;
     const updatedJob = await Job.findOneAndUpdate(
       {
-        user: req.user.id,
+        user: req.user.userId,
       },
       currentJob,
       { new: true },
@@ -72,7 +72,7 @@ export const deleteJob = async (req, res) => {
     const { id } = req.params;
     const job = await Job.findOneAndDelete({
       _id: id,
-      user: req.user.id,
+      user: req.user.userId,
     });
     if (!job) {
       return res.status(404).json({ message: "try again" });
