@@ -5,6 +5,14 @@ const jobSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+   link: {
+    type: String,
+    required: false,
+  },
+  description: {
+    type: String,
+    required: false,
+  },
   position: {
     type: String,
     required: true,

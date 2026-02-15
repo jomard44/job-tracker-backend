@@ -9,6 +9,8 @@ function Edit() {
     company_name: "",
     position: "",
     status: "",
+    link: "",
+    description: "",
   });
   useEffect(() => {
     const fetchData = async () => {
@@ -56,7 +58,16 @@ function Edit() {
           onChange={handleChange}
         />
       </label>
-
+      <label className="flex flex-col text-gray-700 font-medium">
+        Description
+        <input
+          type="text"
+          name="company_name"
+          className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+          value={job.description}
+          onChange={handleChange}
+        />
+      </label>
       <label className="flex flex-col text-gray-700 font-medium">
         Position
         <input
@@ -82,7 +93,16 @@ function Edit() {
           <option value="Rejected">Rejected</option>
         </select>
       </label>
-
+      <label className="flex flex-col text-gray-700 font-medium">
+        Link
+        <input
+          type="text"
+          name="company_name"
+          className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+          value={job.link}
+          onChange={handleChange}
+        />
+      </label>
       <button className="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition">
         Save changes
       </button>

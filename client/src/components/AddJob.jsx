@@ -5,6 +5,8 @@ function AddJob() {
   const navigate = useNavigate();
   const [job, setJob] = useState({
     company_name: "",
+    link: "",
+    description: "",
     position: "",
     status: "Applied",
   });
@@ -15,10 +17,10 @@ function AddJob() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     await fetch(`${import.meta.env.VITE_API}/jobs`, {
       method: "POST",
-      credentials:"include",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -47,6 +49,16 @@ function AddJob() {
           value={job.company_name}
         />
       </label>
+      <label className="flex flex-col text-gray-700 font-medium">
+        Description
+        <input
+          type="text"
+          name="description"
+          className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+          onChange={handleChange}
+          value={job.description}
+        />
+      </label>
 
       <label className="flex flex-col text-gray-700 font-medium">
         Position
@@ -72,6 +84,15 @@ function AddJob() {
           <option value="Offer">Offer</option>
           <option value="Rejected">Rejected</option>
         </select>
+      </label>
+      <label className="flex flex-col text-gray-700 font-medium">
+        <input
+          type="text"
+          name="link"
+          className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+          onChange={handleChange}
+          value={job.link}
+        />
       </label>
 
       <button className="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition">

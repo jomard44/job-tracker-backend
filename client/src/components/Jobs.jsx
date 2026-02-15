@@ -31,8 +31,11 @@ function Jobs() {
             key={job._id}
             id={job._id}
             company_name={job.company_name}
+            description={job.description}
             position={job.position}
             status={job.status}
+            link={job.link}
+
           />
         ))
       ) : (
