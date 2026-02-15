@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Trash2 } from "lucide-react";
+
 const Delete = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -11,7 +13,6 @@ const Delete = () => {
   useEffect(() => {
     const fetchJob = async () => {
       const res = await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
-       
         credentials: "include",
       });
       const data = await res.json();
@@ -31,51 +32,48 @@ const Delete = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white/60 border border-gray-300 rounded-lg w-[50%] mx-auto mt-10 p-6 shadow-md space-y-5"
+      className="bg-white/60 border border-gray-300 rounded-lg w-full max-w-2xl mx-auto mt-10 p-6 shadow-md space-y-4"
     >
       <h2 className="text-2xl font-semibold text-gray-700 text-center">
-        Delete job
+        Delete Job
       </h2>
 
-      <label className="flex flex-col text-gray-700 font-medium">
-        Company Name
+      <div className="flex flex-col md:flex-row gap-4">
         <input
+          className="flex-1 p-2 border rounded-md bg-gray-50"
           type="text"
-          name="company_name"
-          className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={job.company_name}
           readOnly
         />
-      </label>
-
-      <label className="flex flex-col text-gray-700 font-medium">
-        Position
         <input
+          className="flex-1 p-2 border rounded-md bg-gray-50"
           type="text"
-          name="position"
-          className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={job.position}
           readOnly
         />
-      </label>
+      </div>
 
-      <label className="flex flex-col text-gray-700 font-medium">
-        Status
-        <select
-          name="status"
-          className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-          value={job.status}
-          disabled
-        >
-          <option value="Applied">Applied</option>
-          <option value="Interviewed">Interviewed</option>
-          <option value="Offer">Offer</option>
-          <option value="Rejected">Rejected</option>
-        </select>
-      </label>
+      {job.description && (
+        <input
+          className="w-full p-2 border rounded-md bg-gray-50"
+          type="text"
+          value={job.description}
+          readOnly
+        />
+      )}
 
-      <button className="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition">
-        Delete
+      {job.link && (
+        <input
+          className="w-full p-2 border rounded-md bg-gray-50"
+          type="text"
+          value={job.link}
+          readOnly
+        />
+      )}
+
+      <button className="w-full flex items-center justify-center gap-2 bg-red-500 text-white font-semibold py-2 rounded-md hover:bg-red-600 transition">
+        <Trash2 size={18} />
+        Delete Job
       </button>
     </form>
   );
