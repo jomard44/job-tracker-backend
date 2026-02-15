@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Edit2 } from "lucide-react";
+import { SquarePen  } from "lucide-react";
 
 function Edit() {
   const { id } = useParams();
@@ -114,7 +114,7 @@ function Edit() {
       </label>
 
       <button className="w-full flex items-center justify-center gap-2 bg-yellow-500 text-white font-semibold py-2 rounded-md hover:bg-yellow-600 transition">
-        <Edit2 size={18} />
+        <SquarePen  size={18} />
         Save Changes
       </button>
     </form>

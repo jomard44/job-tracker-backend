@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Edit2, Trash2 } from "lucide-react"; 
+import { SquarePen, Trash2 } from "lucide-react"; 
 
 function JobCard({ id, company_name, position, status, description, link }) {
   return (
@@ -21,7 +21,7 @@ function JobCard({ id, company_name, position, status, description, link }) {
           to={`/edit/${id}`}
           className="flex items-center gap-1 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
         >
-          <Edit2 size={16} />
+          <SquarePen size={16} />
           Edit
         </Link>
 
