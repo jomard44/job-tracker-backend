@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { PlusCircle } from "lucide-react";
+import { CirclePlus } from "lucide-react";
 
 function AddJob() {
   const navigate = useNavigate();
@@ -104,7 +104,7 @@ function AddJob() {
       </label>
 
       <button className="w-full flex items-center justify-center gap-2 bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition">
-        <PlusCircle size={18} />
+        <CirclePlus size={18} />
         Add Job
       </button>
     </form>
