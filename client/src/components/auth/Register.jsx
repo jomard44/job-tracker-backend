@@ -23,7 +23,7 @@ function Register() {
     });
 
     if (register.ok) {
-      navigate("/");
+      navigate("/login");
     } else {
       setRegisterd(false);
     }
