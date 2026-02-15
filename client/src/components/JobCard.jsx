@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom"
 function JobCard({id, company_name, position, status, description, link}) {
+  
   return (
     <div className="bg-white/60 border border-gray-300 rounded-lg p-4 shadow-md m-3 flex items-center gap-4">
       <input
@@ -8,15 +9,16 @@ function JobCard({id, company_name, position, status, description, link}) {
         value={company_name}
         readOnly
       />
-      <input
+      {description && (<input
         className="flex-1 p-2 border rounded-md bg-gray-50 text-gray-700 font-medium"
         type="text"
         value={description}
         readOnly
-      />
+      />)}
+      
 
       <input
-        className="flex-1 p-2 border rounded-md bg-gray-50 text-gray-700"
+        className="displayFeild flex-1 p-2 border rounded-md bg-gray-50 text-gray-700" 
         type="text"
         value={position}
         readOnly
@@ -28,12 +30,13 @@ function JobCard({id, company_name, position, status, description, link}) {
         value={status}
         readOnly
       />
-      <input
-        className="flex-1 p-2 border rounded-md bg-gray-50 text-gray-700 font-medium"
+      {link && (<input
+        className="displayFeild flex-1 p-2 border rounded-md bg-gray-50 text-gray-700 font-medium"
         type="text"
         value={link}
         readOnly
-      />
+      />)}
+      
     <Link className="p-4" to={`/edit/${id}`}>edit</Link>
      <Link className="p-4" to={`/delete/${id}`}>delete</Link>
     </div>

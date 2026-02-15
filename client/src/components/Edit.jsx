@@ -9,9 +9,10 @@ function Edit() {
     company_name: "",
     position: "",
     status: "",
-    link: "",
     description: "",
+    link: "",
   });
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
@@ -62,7 +63,7 @@ function Edit() {
         Description
         <input
           type="text"
-          name="company_name"
+          name="description"
           className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={job.description}
           onChange={handleChange}
@@ -97,7 +98,7 @@ function Edit() {
         Link
         <input
           type="text"
-          name="company_name"
+          name="link"
           className="mt-1 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={job.link}
           onChange={handleChange}
