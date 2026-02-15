@@ -19,7 +19,7 @@ export const getJob = async (req, res) => {
       _id: id,
       user: req.user.userId,
     });
-    if (!job) {
+    if (job.length === 0) {
       return res.send("no job found");
     }
     res.status(200).json(job);
@@ -50,6 +50,7 @@ export const editJob = async (req, res) => {
     const currentJob = req.body;
     const updatedJob = await Job.findOneAndUpdate(
       {
+        _id:id,
         user: req.user.userId,
       },
       currentJob,
