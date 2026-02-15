@@ -34,6 +34,7 @@ function Edit() {
     e.preventDefault();
     await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
       method: "PUT",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },

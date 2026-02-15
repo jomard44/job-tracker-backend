@@ -24,6 +24,7 @@ const Delete = () => {
     e.preventDefault();
     await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
       method: "DELETE",
+      credentials: "include",
     });
     navigate("/");
   };
