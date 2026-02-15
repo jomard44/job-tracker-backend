@@ -23,6 +23,11 @@ function Register() {
     });
 
     if (register.ok) {
+      <div className="flext justify-center items-center text-green-500">
+        <p>thank you for signing up.</p>
+        <p>you can now signin</p>
+      </div>
+      
       navigate("/login");
     } else {
       setRegisterd(false);
