@@ -9,6 +9,7 @@ import Register from "./components/auth/Register";
 import Signin from "./components/auth/Signin";
 import Signout from "./components/auth/Signout";
 import ProtectedRoutes from "./utils/protectedRoutes";
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
             <Route path="/logout" element={<Signout />} />
           </Route>
         </Routes>
+        <Analytics />
       </BrowserRouter>
     </>
   );
