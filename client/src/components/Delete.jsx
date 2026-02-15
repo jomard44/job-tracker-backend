@@ -11,7 +11,7 @@ const Delete = () => {
   useEffect(() => {
     const fetchJob = async () => {
       const res = await fetch(`${import.meta.env.VITE_API}/jobs/${id}`, {
-        method: "DELETE",
+       
         credentials: "include",
       });
       const data = await res.json();
