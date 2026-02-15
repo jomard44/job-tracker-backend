@@ -1,19 +1,43 @@
 import { Link } from "react-router-dom";
-import { SquarePen, Trash2 } from "lucide-react"; 
+import { SquarePen, Trash2 } from "lucide-react";
 
 function JobCard({ id, company_name, position, status, description, link }) {
   return (
-    <div className="bg-white/60 border border-gray-300 rounded-lg p-4 shadow-md m-3 
-                    flex flex-col md:flex-row gap-3 items-center md:items-start">
-
-      <input className="w-full md:flex-1 p-2 border rounded-md bg-gray-50" value={company_name} readOnly />
+    <div
+      className="bg-white/60 border border-gray-300 rounded-lg p-4 shadow-md m-3 
+                    flex flex-col md:flex-row gap-3 items-center md:items-start"
+    >
+      <input
+        className="w-full md:flex-1 p-2 border rounded-md bg-gray-50"
+        value={company_name}
+        readOnly
+      />
       {description && (
-        <input className="w-full md:flex-1 p-2 border rounded-md bg-gray-50" value={description} readOnly />
+        <input
+          className="w-full md:flex-1 p-2 border rounded-md bg-gray-50"
+          value={description}
+          readOnly
+        />
       )}
-      <input className="w-full md:flex-1 p-2 border rounded-md bg-gray-50" value={position} readOnly />
-      <input className="w-full md:flex-1 p-2 border rounded-md bg-gray-50" value={status} readOnly />
+      <input
+        className="w-full md:flex-1 p-2 border rounded-md bg-gray-50"
+        value={position}
+        readOnly
+      />
+      <input
+        className="w-full md:flex-1 p-2 border rounded-md bg-gray-50"
+        value={status}
+        readOnly
+      />
       {link && (
-        <input className="w-full md:flex-1 p-2 border rounded-md bg-gray-50" value={link} readOnly />
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full md:flex-1 p-2 border rounded-md bg-gray-50 text-blue-600 underline break-all"
+        >
+          {link}
+        </a>
       )}
 
       <div className="flex gap-2 mt-2 md:mt-0">
