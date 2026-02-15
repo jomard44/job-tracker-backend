@@ -34,7 +34,7 @@ function JobCard({ id, company_name, position, status, description, link }) {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full md:flex-1 p-2 border rounded-md bg-gray-50 text-blue-600 underline"
+          className="w-full md:flex-1 p-2 border rounded-md bg-gray-50 text-blue-600 underline overflow-x-auto whitespace-nowrap"
         >
           {link}
         </a>
