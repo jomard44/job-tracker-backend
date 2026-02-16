@@ -16,7 +16,7 @@ function NaveBar() {
       {isAuth && (
         <>
           <h1 className="text-red-500 font-bold ">
-            <Link to="/">Job Tracker</Link>
+            <Link to="/jobs">Job Tracker</Link>
           </h1>
           <Link
             className=" text-white  text-lg hover:text-blue-200"

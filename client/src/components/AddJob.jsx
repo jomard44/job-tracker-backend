@@ -28,7 +28,7 @@ function AddJob() {
       body: JSON.stringify(job),
     });
     setJob({ company_name: "", position: "", status: "Applied" });
-    navigate("/");
+    navigate("/jobs");
   };
 
   return (

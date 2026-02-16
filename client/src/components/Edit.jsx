@@ -39,7 +39,7 @@ function Edit() {
       },
       body: JSON.stringify(job),
     });
-    navigate("/");
+    navigate("/jobs");
   };
   return (
     <form

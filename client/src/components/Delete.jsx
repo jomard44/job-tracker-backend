@@ -27,7 +27,7 @@ const Delete = () => {
       method: "DELETE",
       credentials: "include",
     });
-    navigate("/");
+    navigate("/jobs");
   };
   return (
     <form
