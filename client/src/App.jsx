@@ -11,11 +11,8 @@ import Signout from "./components/auth/Signout";
 import ProtectedRoutes from "./utils/protectedRoutes";
 import Feedback from "./components/Feedback";
 import FeedbackButton from "./components/FeedbackBtn";
-import { useAuth } from "../utils/AuthContext";
 
 function App() {
-  const { isAuth } = useAuth();
-
   return (
     <>
       <BrowserRouter>
@@ -32,11 +29,10 @@ function App() {
             <Route path="/feedback" element={<Feedback />} />
           </Route>
         </Routes>
-        {isAuth && (
-          <div className="fixed bottom-5 right-5 z-50">
-            <FeedbackButton />
-          </div>
-        )}
+
+        <div className="fixed bottom-5 right-5 z-50">
+          <FeedbackButton />
+        </div>
       </BrowserRouter>
     </>
   );
