@@ -40,7 +40,7 @@ function Register() {
   return (
     <>
       {success && (
-        <div className="flex justify-center items-center text-green-500">
+        <div className="flex justify-center items-center text-green-500 mt-5">
           <p>Thank you for signing up.</p>
           <p>You can now sign in.</p>
         </div>
