@@ -10,6 +10,7 @@ import Signin from "./components/auth/Signin";
 import Signout from "./components/auth/Signout";
 import ProtectedRoutes from "./utils/protectedRoutes";
 import Feedback from "./components/Feedback";
+import FeedbackButton from "./components/FeedbackBtn";
 function App() {
   return (
     <>
