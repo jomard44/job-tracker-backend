@@ -25,15 +25,16 @@ function Register() {
     });
 
     if (register.ok) {
-      navigate("/login");
       setSuccess(true);
+      setRegisterd(true);
+      setUser({ email: "", password: "" });
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } else {
       setRegisterd(false);
     }
-    setUser({
-      email: "",
-      password: "",
-    });
   };
 
   return (

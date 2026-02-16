@@ -25,7 +25,7 @@ const {setIsAuth} = useAuth()
     });
 
     if (signin.ok) {
-      navigate("/");
+      navigate("/jobs");
       setIsAuth(true)
     } else {
       setSigned(false);
