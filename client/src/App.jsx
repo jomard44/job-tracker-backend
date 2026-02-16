@@ -9,6 +9,7 @@ import Register from "./components/auth/Register";
 import Signin from "./components/auth/Signin";
 import Signout from "./components/auth/Signout";
 import ProtectedRoutes from "./utils/protectedRoutes";
+import Feedback from "./components/Feedback";
 function App() {
   return (
     <>
@@ -17,14 +18,18 @@ function App() {
         <Routes>
           <Route path="/login" element={<Signin />} />
           <Route path="/register" element={<Register />} />
-          <Route element={<ProtectedRoutes/>}>
+          <Route element={<ProtectedRoutes />}>
             <Route path="/" element={<Jobs />} />
             <Route path="/add-job" element={<AddJob />} />
             <Route path="/delete/:id" element={<Delete />} />
             <Route path="/edit/:id" element={<Edit />} />
             <Route path="/logout" element={<Signout />} />
+            <Route path="/feedback" element={<Feedback />} />
           </Route>
         </Routes>
+        <ProtectedRoutes>
+          <FeedbackButton />
+        </ProtectedRoutes>
       </BrowserRouter>
     </>
   );
