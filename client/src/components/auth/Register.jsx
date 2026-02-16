@@ -83,7 +83,7 @@ function Register() {
           Signup
         </button>
         <div className="flex flex-col justify-center items-center">
-          <p>don't have an account </p>
+          <p>Already have an account? </p>
 
           <Link to="/login" className="text-blue-500 hover:cursor-pointer">
             signin

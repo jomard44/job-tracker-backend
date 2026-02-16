@@ -74,7 +74,7 @@ const {setIsAuth} = useAuth()
         Signin
       </button>
       <div className="flex flex-col justify-center items-center">
-        <p>don't have an account </p>
+        <p>Don't have an account? </p>
 
         <Link to="/register" className="text-blue-500 hover:cursor-pointer">
           
