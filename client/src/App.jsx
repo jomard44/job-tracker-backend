@@ -11,17 +11,18 @@ import Signout from "./components/auth/Signout";
 import ProtectedRoutes from "./utils/protectedRoutes";
 import Feedback from "./components/Feedback";
 import FeedbackButton from "./components/FeedbackBtn";
-
+import LandingPage from "./components/Landing";
 function App() {
   return (
     <>
       <BrowserRouter>
         <NavBar />
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Signin />} />
           <Route path="/register" element={<Register />} />
           <Route element={<ProtectedRoutes />}>
-            <Route path="/" element={<Jobs />} />
+            <Route path="/jobs" element={<Jobs />} />
             <Route path="/add-job" element={<AddJob />} />
             <Route path="/delete/:id" element={<Delete />} />
             <Route path="/edit/:id" element={<Edit />} />
