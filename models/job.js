@@ -25,6 +25,6 @@ const jobSchema = new mongoose.Schema({
     ref:"User",
     required:true
   }
-});
+},{timeStamps: true});
 
 export default mongoose.model("Job", jobSchema);

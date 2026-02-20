@@ -10,6 +10,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
+},{timeStamps: true});
 
 export default mongoose.model("User", userSchema);
