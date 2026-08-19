@@ -34,8 +34,15 @@ function JobCard({ id, company_name, position, status, description, link }) {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full md:flex-1 p-2 border rounded-md bg-gray-50 text-blue-600 underline overflow-x-auto whitespace-nowrap"
-        >
+          className={`w-full md:flex-1 p-2 border rounded-md overflow-x-auto whitespace-nowrap ${
+                     status === "Applied"
+                     ? "bg-blue-50 text-blue-600"
+                     : status === "Interview"
+                     ? "bg-yellow-50 text-yellow-600"
+                     : status === "Rejected"
+                     ? "bg-red-50 text-red-600"
+                     : "bg-gray-50 text-gray-600"
+                     }`} >
           {link}
         </a>
       )}
