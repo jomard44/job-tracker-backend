@@ -25,7 +25,17 @@ function JobCard({ id, company_name, position, status, description, link }) {
         readOnly
       />
       <input
-        className="w-full md:flex-1 p-2 border rounded-md bg-gray-50"
+        className={`w-full md:flex-1 p-2 border rounded-md ${
+          status === "Applied"
+            ? "bg-blue-50 text-blue-700 border-blue-200"
+            : status === "Interview"
+            ? "bg-yellow-50 text-yellow-700 border-yellow-200"
+            : status === "Rejected"
+            ? "bg-red-50 text-red-700 border-red-200"
+            : status === "Offer"
+            ? "bg-green-50 text-green-700 border-green-200"
+            : "bg-gray-50 text-gray-700 border-gray-200"
+        }`}
         value={status}
         readOnly
       />
